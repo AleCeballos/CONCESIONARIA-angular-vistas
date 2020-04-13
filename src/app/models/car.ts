@@ -9,7 +9,7 @@ export class Car{
  public price:number,
  public status:string,
  public createdAt:any,
- public updateddAt:any
+ public updatedAt:any
  
     ){}
 }

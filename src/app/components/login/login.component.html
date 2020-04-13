@@ -1,1 +1,33 @@
+<div class="container col-lg-2 border mt-5 p-4 rounded text-center bg-dark text-light">
+
 <h1>{{title}}</h1>
+
+
+<!--NOMBRE -->
+<form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" name="email" #email="ngModel" [(ngModel)]="user.email" class="form-control" id="name" required>
+        <!-- validacion -->
+
+        <span *ngIf="!email.valid && email.touched">
+            El email no es valido
+        </span>
+      </div>
+
+       <!--PASSWORD -->
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" name="password" #password="ngModel"  [(ngModel)]="user.password"class="form-control" id="password" required>
+        <span *ngIf="!password.valid && password.touched">
+            la contraseña no es valida
+        </span>
+     
+      </div>
+
+      <button type="submit" class="btn btn-primary" [disabled]="!loginForm.form.valid">Registrarme</button>
+
+  </form>
+
+<!-- fin de la class container -->
+</div>

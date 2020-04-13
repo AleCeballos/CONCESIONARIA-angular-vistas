@@ -17,9 +17,8 @@
         <li class="nav-item active">
           <a class="nav-link" href="#">crear coche <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item active nav-right ">
-          <a class="nav-link" href="#">Login <span class="sr-only">(current)</span></a>
-        </li>
+    
+   
         
        
       </ul>
@@ -28,8 +27,11 @@
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
      <ul class="navbar-nav mr-0">
-      <li class="nav-item active">
-        <a class="nav-link ml-5 mr-5" href="#">Login <span class="sr-only">(current)</span></a>
+      <li class="nav-item active nav-right ">
+        <a class="nav-link mr-2 ml-4" [routerLink]="['login']">Login <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active nav-right ">
+        <a class="nav-link mr-2 ml-2" [routerLink]="['registro']">Registrate <span class="sr-only">(current)</span></a>
       </li>
     </ul>
     </div>

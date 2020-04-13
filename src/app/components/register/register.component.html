@@ -1,1 +1,56 @@
+
+<div class="container col-lg-2 border mt-5 p-4 rounded text-center bg-dark text-light">
 <h1>{{title}}</h1>
+<div class="alert alert-success" *ngIf="status == 'success'"> El registo se ha completado correctamente logueate <a [routerLink]="['/login']">aquí</a></div>
+
+<div class="alert alert-danger" *ngIf="status == 'error'"> El registo no se ha completado correctamente logueate </div>
+
+ <!--NOMBRE -->
+<form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
+    <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" name="name" #name="ngModel" [(ngModel)]="user.name" class="form-control" id="name" required>
+        <!-- validacion -->
+
+        <span *ngIf="!name.valid && name.touched">
+            El nombre es obligatorio
+        </span>
+      </div>
+
+      <!--APELLIDO-->
+      <div class="form-group">
+        <label for="surname">Surname</label>
+        <input type="text" name="surname" #surname="ngModel" [(ngModel)]="user.surname" class="form-control" id="surname" required>
+        <!-- validacion -->
+
+        <span *ngIf="!surname.valid && surname.touched">
+            El apellido es obligatorio
+        </span>
+      </div>
+
+
+     
+    <!--EMAIL -->
+      <div class="form-group">
+      <label for="email">Email address</label>
+      <input type="email" name="email" #email="ngModel"[(ngModel)]="user.email" class="form-control" id="email" aria-describedby="emailHelp" required>
+       <!-- validacion -->
+
+       <span *ngIf="!email.valid && email.touched">
+        El email es obligatorio
+    </span>
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+     
+    <!--PASSWORD -->
+    <div class="form-group">
+      <label for="password">Password</label>
+        <input type="password" name="password" #password="ngModel"  [(ngModel)]="user.password"class="form-control" id="password"  required>
+   
+    </div>
+    
+    
+    <input type="submit" value="Registrarme" class="btn btn-primary">
+  </form>
+<!-- fin de la class container -->
+</div>
